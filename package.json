@@ -1,7 +1,7 @@
 {
   "name": "wpgulptheme",
   "version": "1.0.0",
-  "author": "Ahmad Awais (https://twitter.com/MrAhmadAwais/)",
+  "author": "Win",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -9,9 +9,10 @@
     "@babel/register": "^7.0.0",
     "beepbeep": "^1.2.2",
     "browser-sync": "^2.11.1",
+    "cross-env": "^5.2.0",
     "eslint": "^5.5.0",
     "eslint-config-wordpress": "^2.0.0",
-    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-cache": "^1.0.2",
@@ -34,12 +35,14 @@
   },
   "scripts": {
     "start": "gulp",
-    "styles": "gulp styles",
-    "stylesRTL": "gulp stylesRTL",
-    "vendorsJS": "gulp vendorsJS",
-    "customJS": "gulp customJS",
-    "images": "gulp images",
-    "clearCache": "gulp clearCache",
-    "translate": "gulp translate"
+    "build": "cross-env NODE_ENV=production gulp build",
+    "build:css": "cross-env NODE_ENV=production gulp styles",
+    "build:js": "cross-env NODE_ENV=production gulp buildJS",
+    "build:img": "cross-env NODE_ENV=production gulp images",
+    "stylesRTL": "cross-env NODE_ENV=production gulp stylesRTL",
+    "vendorsJS": "cross-env NODE_ENV=production gulp vendorsJS",
+    "customJS": "cross-env NODE_ENV=production gulp customJS",
+    "clearCache": "cross-env NODE_ENV=production gulp clearCache",
+    "translate": "cross-env NODE_ENV=production gulp translate"
   }
 }

@@ -12,7 +12,8 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-
+var_dump(SITE_MODE);
+var_dump(ICL_LANGUAGE_CODE);
 wp_footer(); ?>
 
 </body>

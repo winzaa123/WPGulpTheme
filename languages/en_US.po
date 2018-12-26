@@ -1,0 +1,5 @@
+
+
+# OK working test
+#  msgid "Hello"
+#  msgstr "HHHHHHHHHHHH"

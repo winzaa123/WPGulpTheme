@@ -3,6 +3,7 @@
 # Ignore all directories called node_modules in current folder and any subfolders.
 node_modules/
 /node_modules/
+package-lock.json
 
 # Packages #
 ############
@@ -15,8 +16,8 @@ node_modules/
 *.rar
 *.tar
 *.zip
-*.tgz
-*.map
+*.tgz 
+# *.map 
 
 # Logs and databases #
 ######################
@@ -44,7 +45,7 @@ Thumbs.db
 
 # Composer #
 ##########
-!assets/js/vendor/
+# !assets/js/vendor/
 wpcs/
 /vendor/
 
@@ -60,6 +61,13 @@ assets/bower_components/*
 
 # Compiled Files and Build Dirs #
 ##########
+static/css
+
+static/js/custom.js
+static/js/custom.min.js
+static/js/vendor.js
+static/js/vendor.min.js
+
 /README.html
 
 # PhpStrom Project Files #

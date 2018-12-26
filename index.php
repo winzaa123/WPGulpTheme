@@ -26,6 +26,10 @@ get_header(); ?>
 				echo '<div><strong>🌟 <a href="https://github.com/ahmadawais/WPGulp">STAR WPGULP</strong> →</div>';
 			?>
 		</p>
+		<p>
+		<?php echo _t('Hello') ?>
+		<img src="<?php echo get_template_directory_uri() ?>/static/img/WPFit.png"  />
+		</p>
 	</div>
 	<!-- /.content -->
 </div>

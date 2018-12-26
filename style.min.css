@@ -1,10 +1,9 @@
 /*!
-Theme Name: WPGulpTheme
+Theme Name: THEME_NAME
 Theme URI: https://github.com/ahmadawais/WPGulpTheme
 Description: A theme to demonstrate simplest implementation of WPGulp Boilerplate.
-Version: 2.2.0
-Author: Ahmad Awais
-Author URI: https://twitter.com/MrAhmadAwais/
+Version: 1.0.0
+Author: Win
 License: MIT
 Text Domain: WPGT
 */html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
@@ -81,7 +80,6 @@ select::-ms-expand{display:none}
 select::-ms-value{color:currentColor}
 table{border-collapse:collapse;border-spacing:0}
 textarea{resize:vertical}
-::-moz-selection{background-color:#b3d4fc;text-shadow:none}
 ::selection{background-color:#b3d4fc;text-shadow:none}
 *,*:after,*:before{-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-font-smoothing:antialiased;font-smoothing:antialiased;text-rendering:optimizeLegibility}
 html{font-size:62.5%;height:100%;min-height:100%}
@@ -124,7 +122,7 @@ a img.aligncenter{display:block;margin-left:auto;margin-right:auto}
 #wp-calendar tfoot #next{font-size:10px;text-transform:uppercase;text-align:right}
 #wp-calendar tfoot #prev{font-size:10px;text-transform:uppercase;padding-top:10px}
 .size-auto,.size-full,.size-large,.size-medium,.size-thumbnail{max-width:100%;height:auto}
-.wrap{display:table;width:100%;height:100%;font-size:5vh;padding:3vh;background:#ed4846;color:#fff}
+.wrap{display:table;width:100%;height:100%;font-size:5vh;padding:3vh;background:#406de4;color:#fff}
 .content{display:table-cell;width:100%;vertical-align:middle;margin:0 auto;text-align:center}
 .content h1,.content p{font-family:Lato;font-weight:100}
 .content h1{text-transform:uppercase}

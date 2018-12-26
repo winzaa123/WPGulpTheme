@@ -15,8 +15,8 @@
  *      8. InjectCSS instead of browser page reload.
  *      9. Generates .pot file for i18n and l10n.
  *
- * @author Ahmad Awais <https://github.com/ahmadawais>
- * @version 2.0.0
+ * @tutorial https://github.com/ahmadawais/WPGulp
+ * @author Ahmad Awais <https://twitter.com/MrAhmadAwais/>
  */
 
 /**
@@ -338,10 +338,7 @@ gulp.task( 'translate', () => {
 		.pipe(
 			wpPot({
 				domain: config.textDomain,
-				package: config.packageName,
-				bugReport: config.bugReport,
-				lastTranslator: config.lastTranslator,
-				team: config.team
+				package: config.packageName
 			})
 		)
 		.pipe( gulp.dest( config.translationDestination + '/' + config.translationFile ) )
@@ -362,4 +359,45 @@ gulp.task(
 		gulp.watch( config.watchJsCustom, gulp.series( 'customJS', reload ) ); // Reload on customJS file changes.
 		gulp.watch( config.imgSRC, gulp.series( 'images', reload ) ); // Reload on customJS file changes.
 	})
+);
+
+/*
+	Build in PRODUCTION
+*/
+
+gulp.task( 'buildJS', () => {
+	return gulp
+		.src( config.jsAllFileSRC )
+		.pipe( plumber( errorHandler ) )
+		.pipe(
+			babel({
+				presets: [
+					[
+						'@babel/preset-env', // Preset to compile your modern JS to ES5.
+						{
+							targets: { browsers: config.BROWSERS_LIST } // Target browser list to support.
+						}
+					]
+				]
+			})
+		)
+		.pipe( remember( config.jsCustomSRC ) ) // Bring all files back to stream.
+		.pipe( concat( config.jsCompiledFile + '.js' ) )
+		.pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
+		.pipe( gulp.dest( config.jsCustomDestination ) )
+		.pipe(
+			rename({
+				basename: config.jsCompiledFile,
+				suffix: '.min'
+			})
+		)
+		.pipe( uglify() )
+		.pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
+		.pipe( gulp.dest( config.jsCustomDestination ) )
+		.pipe( notify({ message: '\n\n✅  ===> Compiled JS — completed!\n', onLast: true }) );
+});
+
+gulp.task(
+	'build',
+	gulp.parallel( 'styles', 'buildJS', 'images' )
 );
